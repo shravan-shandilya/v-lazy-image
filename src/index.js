@@ -1,4 +1,4 @@
-const VLazyImageComponent = {
+const VuetifyLazyImageComponent = {
   props: {
     src: {
       type: String,
@@ -8,29 +8,30 @@ const VLazyImageComponent = {
       type: String,
       default: ""
     },
-    srcset: {
-      type: String
-    },
-    intersectionOptions: {
-      type: Object,
-      default: () => ({})
+    aspectRatio: {
+      type: Number,
+      default: 1.777
     }
   },
-  data: () => ({ observer: null, intersected: false, loaded: false }),
+  data: () => ({
+    observer: null,
+    intersected: false,
+    loaded: false
+  }),
   computed: {
     srcImage() {
       return this.intersected ? this.src : this.srcPlaceholder;
-    },
-    srcsetImage() {
-      return this.intersected && this.srcset ? this.srcset : false;
     }
   },
   render(h) {
-    return h("img", {
-      attrs: { src: this.srcImage, srcset: this.srcsetImage },
+    return h("v-img", {
+      attrs: {
+        src: this.srcImage,
+        "aspect-ratio": this.aspectRatio
+      },
       class: {
-        "v-lazy-image": true,
-        "v-lazy-image-loaded": this.loaded
+        "vuetify-lazy-image": true,
+        "vuetify-lazy-image-loaded": this.loaded
       }
     });
   },
@@ -49,7 +50,7 @@ const VLazyImageComponent = {
         this.observer.disconnect();
         this.$emit("intersect");
       }
-    }, this.intersectionOptions);
+    }, {});
 
     this.observer.observe(this.$el);
   },
@@ -58,10 +59,10 @@ const VLazyImageComponent = {
   }
 };
 
-export default VLazyImageComponent;
+export default VuetifyLazyImageComponent;
 
-export const VLazyImagePlugin = {
+export const VuetifyLazyImagePlugin = {
   install: (Vue, opts) => {
-    Vue.component("VLazyImage", VLazyImageComponent);
+    Vue.component("VuetifyLazyImage", VuetifyLazyImageComponent);
   }
 };

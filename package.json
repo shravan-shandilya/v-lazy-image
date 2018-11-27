@@ -1,14 +1,14 @@
 {
-  "name": "v-lazy-image",
-  "version": "1.2.2",
+  "name": "vuetify-lazy-image",
+  "version": "1.2.3",
   "description": "A Vue.js component to lazy load images using the Intersection Observer",
-  "main": "dist/v-lazy-image.cjs.js",
-  "module": "dist/v-lazy-image.es.js",
-  "unpkg": "dist/v-lazy-image.js",
-  "browser": "dist/v-lazy-image.js",
+  "main": "dist/vuetify-lazy-image.cjs.js",
+  "module": "dist/vuetify-lazy-image.es.js",
+  "unpkg": "dist/vuetify-lazy-image.js",
+  "browser": "dist/vuetify-lazy-image.js",
   "author": {
-    "name": "Alex Jover Morales",
-    "email": "alexjovermorales@gmail.com"
+    "name": "Shravan Shandilya",
+    "email": "s.shravan95@gmail.com"
   },
   "scripts": {
     "build": "rollit",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexjoverm/v-lazy-image.git"
+    "url": "git+https://github.com/shravan-shandilya/vuetify-lazy-image.git"
   },
   "keywords": [
     "vue",
@@ -25,13 +25,15 @@
     "load",
     "image",
     "intersection",
-    "observer"
+    "observer",
+    "vuetify",
+    "v-img"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alexjoverm/v-lazy-image/issues"
+    "url": "https://github.com/shravan-shandilya/vuetify-lazy-image/issues"
   },
-  "homepage": "https://github.com/alexjoverm/v-lazy-image#readme",
+  "homepage": "https://github.com/shravan-shandilya/vuetify-lazy-image#readme",
   "devDependencies": {
     "rollit": "0.0.7"
   },
