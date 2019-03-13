@@ -1,6 +1,6 @@
 {
   "name": "vuetify-lazy-image",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "A Vue.js component to lazy load images using the Intersection Observer",
   "main": "dist/vuetify-lazy-image.cjs.js",
   "module": "dist/vuetify-lazy-image.es.js",

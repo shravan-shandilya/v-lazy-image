@@ -23,6 +23,14 @@ const VuetifyLazyImageComponent = {
       return this.intersected ? this.src : this.srcPlaceholder;
     }
   },
+  methods: {
+    load() {
+      if (this.$el.getAttribute("src") !== this.srcPlaceholder) {
+        this.loaded = true;
+        this.$emit("load");
+      }
+    }
+  },
   render(h) {
     return h("v-img", {
       attrs: {
@@ -32,17 +40,11 @@ const VuetifyLazyImageComponent = {
       class: {
         "vuetify-lazy-image": true,
         "vuetify-lazy-image-loaded": this.loaded
-      }
+      },
+      on: { load: this.load }
     });
   },
   mounted() {
-    this.$el.addEventListener("load", ev => {
-      if (this.$el.getAttribute('src') !== this.srcPlaceholder) {
-        this.loaded = true;
-        this.$emit("load");
-      }
-    });
-
     this.observer = new IntersectionObserver(entries => {
       const image = entries[0];
       if (image.isIntersecting) {
